@@ -3,24 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PROYECTA-IA | Control de acceso</title>
+  <title>PROYECTA-IA | Control central de acceso</title>
   <style>
     body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;color:#1f2937;margin:0}
-    main{width:min(760px,92%);margin:60px auto;background:white;border:1px solid #d9e0e7;
+    main{width:min(760px,92%);margin:60px auto;background:#fff;border:1px solid #d9e0e7;
       border-radius:16px;padding:28px;box-shadow:0 5px 20px rgba(20,35,55,.06)}
     h1{color:#174a7e;margin-top:0}
     .note{background:#eef5fb;border:1px solid #bfd8ee;border-radius:12px;padding:14px}
+    .ok{background:#eef9f2;border:1px solid #bfe1cb;border-radius:12px;padding:14px;margin-top:14px}
     code{background:#f1f5f9;padding:2px 5px;border-radius:5px}
   </style>
 </head>
 <body>
 <main>
   <h1>PROYECTA-IA · Control central de acceso</h1>
-  <p>Este repositorio contiene el archivo central de autorización utilizado por los módulos de PROYECTA-IA.</p>
+  <p>Repositorio central de autorización utilizado por los chatbots de PROYECTA-IA.</p>
   <div class="note">
-    <strong>No elimine ni cambie el nombre de <code>access.js</code>.</strong>
-    Cuando se incorporen nuevos estudiantes, basta con actualizar ese único archivo.
+    <strong>Archivo central:</strong> <code>access.js</code><br>
+    Todos los chatbots consultan este mismo archivo.
   </div>
+  <div class="ok">
+    <strong>Nómina vigente:</strong> 54 estudiantes autorizados.<br>
+    <strong>Actualización:</strong> 25/09/2026.<br>
+    <strong>Acceso docente:</strong> se conserva sin cambios.
+  </div>
+  <p>Para futuras altas o bajas de estudiantes se modifica únicamente <code>access.js</code>.</p>
   <p>Realizado por: Luis Cabezas Tito, Ph. D.</p>
 </main>
 </body>

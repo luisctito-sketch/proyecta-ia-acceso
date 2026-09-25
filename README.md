@@ -1,31 +1,33 @@
-# PROYECTA-IA — Acceso central
+# PROYECTA-IA — ACCESO CENTRAL
 
-Este repositorio centraliza la lista de C.I. autorizados para todos los módulos de PROYECTA-IA.
-
-## Publicación
-
-Crea el repositorio:
+Repositorio existente que debe mantenerse con el mismo nombre:
 
 `proyecta-ia-acceso`
 
-y activa GitHub Pages desde la rama `main`, carpeta `/ (root)`.
-
-La dirección esperada del archivo será:
+Archivo consumido por todos los chatbots:
 
 `https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js`
 
-## Ventaja
+## Actualización 25/09/2026
 
-Los demás chatbots cargarán este archivo directamente. Cuando aparezcan nuevos estudiantes:
+La lista autorizada fue sincronizada con la nómina reciente de Taller de Tesis II:
 
-1. El docente comparte la nueva lista.
-2. Se genera un nuevo `access.js` con las nuevas huellas.
-3. Se reemplaza **solo ese archivo** en este repositorio.
-4. Todos los módulos de PROYECTA-IA quedan actualizados automáticamente.
+- 54 estudiantes autorizados.
+- Se retiraron 5 estudiantes que ya no aparecen en la nómina.
+- Se incorporaron 3 estudiantes nuevos.
+- Se conserva el acceso docente existente.
+- Los C.I. no aparecen en texto plano dentro de `access.js`; se almacenan como huellas PBKDF2/SHA-256.
 
-No es necesario modificar cada página individualmente.
+## Para subir a GitHub
 
-## Seguridad
+En el repositorio `proyecta-ia-acceso`, reemplaza:
 
-Los C.I. no aparecen en texto plano: se almacenan huellas criptográficas derivadas.
-GitHub Pages sigue siendo un sitio estático, por lo que este mecanismo es una barrera de aula y no una autenticación institucional de alta seguridad.
+- `access.js`
+- `index.html`
+- `README.md`
+
+La actualización de `access.js` se propaga a todos los chatbots que ya están enlazados al acceso central.
+
+## Futuras actualizaciones
+
+Cuando cambie la nómina, no es necesario editar cada chatbot. Se actualiza solamente este repositorio central.
