@@ -1,33 +1,29 @@
-# PROYECTA-IA — ACCESO CENTRAL
+# PROYECTA-IA — Acceso central
 
-Repositorio existente que debe mantenerse con el mismo nombre:
+Repositorio: `proyecta-ia-acceso`
 
-`proyecta-ia-acceso`
-
-Archivo consumido por todos los chatbots:
-
+Archivo que utilizan todos los chatbots:
 `https://luisctito-sketch.github.io/proyecta-ia-acceso/access.js`
 
-## Actualización 25/09/2026
+## Actualización de nuevos estudiantes
 
-La lista autorizada fue sincronizada con la nómina reciente de Taller de Tesis II:
+Cuando exista una nueva lista de estudiantes:
 
-- 54 estudiantes autorizados.
-- Se retiraron 5 estudiantes que ya no aparecen en la nómina.
-- Se incorporaron 3 estudiantes nuevos.
-- Se conserva el acceso docente existente.
-- Los C.I. no aparecen en texto plano dentro de `access.js`; se almacenan como huellas PBKDF2/SHA-256.
+1. Generar las nuevas huellas de C.I. utilizando el mismo `salt` e `iterations`.
+2. Actualizar el arreglo `studentHashes` en `access.js`.
+3. Reemplazar **solo `access.js`** en este repositorio.
+4. Esperar a que GitHub Pages publique el cambio.
+5. Todos los chatbots quedan actualizados automáticamente.
 
-## Para subir a GitHub
+NO es necesario editar uno por uno los repositorios de los chatbots.
 
-En el repositorio `proyecta-ia-acceso`, reemplaza:
+## Seguridad
 
-- `access.js`
-- `index.html`
-- `README.md`
+Los números de C.I. no están escritos en texto plano en `access.js`; se almacenan huellas derivadas mediante PBKDF2/SHA-256.
+Este sistema es una barrera de acceso para el aula, no un sistema institucional de autenticación.
 
-La actualización de `access.js` se propaga a todos los chatbots que ya están enlazados al acceso central.
 
-## Futuras actualizaciones
-
-Cuando cambie la nómina, no es necesario editar cada chatbot. Se actualiza solamente este repositorio central.
+## Actualización 2026-10-22
+- Se añadió un nuevo estudiante autorizado a la base central.
+- No se modificaron los accesos existentes ni la clave docente.
+- Los chatbots enlazados a `access.js` reciben la actualización automáticamente al reemplazar este archivo en GitHub.
