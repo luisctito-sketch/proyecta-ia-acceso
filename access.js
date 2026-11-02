@@ -132,7 +132,8 @@ async function deriveHash(value) {
 }
 
 function showSite(role) {
-  sessionStorage.setItem("proyectaAuth", role);
+  // La autorización vive únicamente en memoria mientras permanece abierta esta página.
+  // No se guarda en sessionStorage/localStorage: cada chatbot exige una nueva autenticación.
   document.body.classList.remove("access-locked");
   authOverlay.classList.add("hidden");
   if (logoutBtn) logoutBtn.classList.remove("hidden");
@@ -205,6 +206,7 @@ ciInput.addEventListener("keydown", e => {
   if (e.key === "Enter") authenticate();
 });
 logoutBtn?.addEventListener("click", () => {
+  // Limpia cualquier clave heredada de versiones anteriores y bloquea el módulo.
   sessionStorage.removeItem("proyectaAuth");
   ciInput.value = "";
   accessMsg.textContent = "";
@@ -212,10 +214,20 @@ logoutBtn?.addEventListener("click", () => {
   ciInput.focus();
 });
 
-const existingRole = sessionStorage.getItem("proyectaAuth");
-if (existingRole === "student" || existingRole === "teacher") {
-  showSite(existingRole);
-} else {
-  lockSite();
-  setTimeout(() => ciInput.focus(), 100);
-}
+// Desde esta versión NO existe inicio de sesión persistente entre chatbots.
+// Se elimina una posible autorización guardada por versiones anteriores y se bloquea siempre al cargar.
+sessionStorage.removeItem("proyectaAuth");
+lockSite();
+setTimeout(() => ciInput.focus(), 100);
+
+// Algunos navegadores restauran una página autenticada desde la caché de historial (bfcache)
+// al usar Atrás/Adelante. En ese caso se vuelve a exigir el C.I. antes de mostrar el contenido.
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    sessionStorage.removeItem("proyectaAuth");
+    ciInput.value = "";
+    accessMsg.textContent = "";
+    lockSite();
+    setTimeout(() => ciInput.focus(), 100);
+  }
+});

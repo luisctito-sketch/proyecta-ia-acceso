@@ -55,3 +55,19 @@ Para activar esta función en todos los chatbots, basta con reemplazar **`access
 `proyecta-ia-acceso`
 
 Los archivos `index.html` y `README.md` de este paquete solo documentan la actualización y pueden reemplazarse también si se desea mantener el repositorio completo al día.
+
+## Actualización 2026-11-02 — Reautenticación obligatoria en cada chatbot
+
+A partir de esta versión, la autorización **no se conserva entre módulos**.
+
+- Cada chatbot solicita nuevamente el C.I./contraseña al entrar.
+- Volver al portal principal no deja abiertos los demás chatbots.
+- Recargar un chatbot vuelve a solicitar acceso.
+- Si el navegador restaura una página mediante Atrás/Adelante (bfcache), el módulo vuelve a bloquearse.
+- Se elimina automáticamente la antigua clave `proyectaAuth` de `sessionStorage` si quedó guardada por una versión anterior.
+- El botón global `🏠 PROYECTA-IA · Portal` se conserva y solo aparece después de autorizar el chatbot actual.
+
+### Archivo obligatorio para GitHub
+
+Reemplazar **solo `access.js`** en el repositorio `proyecta-ia-acceso`.
+Los demás archivos de este paquete son documentación y pueden reemplazarse opcionalmente.
