@@ -27,3 +27,31 @@ Este sistema es una barrera de acceso para el aula, no un sistema institucional 
 - Se añadió un nuevo estudiante autorizado a la base central.
 - No se modificaron los accesos existentes ni la clave docente.
 - Los chatbots enlazados a `access.js` reciben la actualización automáticamente al reemplazar este archivo en GitHub.
+
+
+## Actualización 2026-11-02 — Botón global al portal principal
+
+Se añadió al archivo central `access.js` un botón flotante global:
+
+`🏠 PROYECTA-IA · Portal`
+
+Destino:
+
+`https://luisctito-sketch.github.io/proyecta-ia/`
+
+### Cómo funciona
+
+- El botón aparece automáticamente después de un acceso autorizado.
+- Se incorpora en todos los chatbots que ya cargan este `access.js` central.
+- No es necesario editar uno por uno esos repositorios.
+- En el propio portal principal el botón se oculta automáticamente.
+- Al cerrar sesión el botón también se oculta.
+- En impresión no aparece.
+
+### Qué archivo reemplazar en GitHub
+
+Para activar esta función en todos los chatbots, basta con reemplazar **`access.js`** en el repositorio:
+
+`proyecta-ia-acceso`
+
+Los archivos `index.html` y `README.md` de este paquete solo documentan la actualización y pueden reemplazarse también si se desea mantener el repositorio completo al día.
