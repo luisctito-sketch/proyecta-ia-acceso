@@ -1,3 +1,4 @@
+/* PROYECTA-IA 1.0.1 | Autor: Luis Cabezas Tito | © 2026 Luis Cabezas Tito. Todos los derechos reservados. | PROVENANCE-ID: PIA-LCT-2026-v1.0.1 */
 const PROYECTA_ACCESS = {
   salt: "PROYECTA-IA-TTII-9A-2026-v1",
   iterations: 180000,
@@ -231,3 +232,44 @@ window.addEventListener("pageshow", (event) => {
     setTimeout(() => ciInput.focus(), 100);
   }
 });
+
+
+/* === PROYECTA-IA SECURITY 1.0.1: dominio oficial + autoría === */
+(() => {
+  const owner = 'Luis Cabezas Tito';
+  const version = '1.0.1';
+  const officialHost = 'luisctito-sketch.github.io';
+  const officialUrl = 'https://luisctito-sketch.github.io/proyecta-ia/';
+  const isOfficial = String(location.hostname || '').toLowerCase() === officialHost;
+  window.PROYECTA_IA_SECURITY = Object.freeze({owner, version, officialHost, isOfficial});
+
+  function addCopyright() {
+    if (document.getElementById('proyectaIaCopyrightBadge')) return;
+    const el=document.createElement('div');
+    el.id='proyectaIaCopyrightBadge';
+    el.textContent=`© 2026 ${owner} · PROYECTA-IA v${version} · Todos los derechos reservados`;
+    Object.assign(el.style,{position:'fixed',right:'10px',bottom:'10px',zIndex:'2147482500',padding:'7px 10px',borderRadius:'9px',background:'rgba(8,31,54,.90)',color:'#fff',font:'700 11px/1.25 Arial,Helvetica,sans-serif',boxShadow:'0 4px 18px rgba(0,0,0,.18)',pointerEvents:'none',maxWidth:'calc(100vw - 20px)'});
+    document.body.appendChild(el);
+  }
+
+  function blockUnofficial() {
+    if (isOfficial || document.getElementById('proyectaIaUnofficialBlock')) return;
+    try { document.body.classList.add('access-locked'); } catch (_) {}
+    const panel=document.createElement('div');
+    panel.id='proyectaIaUnofficialBlock';
+    panel.innerHTML=`<div style="max-width:680px;background:#fff;border-radius:20px;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.32);font-family:Arial,Helvetica,sans-serif;color:#13253a;text-align:center"><div style="font-size:42px;font-weight:900;color:#0b63ce;margin-bottom:10px">PROYECTA-IA</div><div style="font-size:22px;font-weight:800;margin-bottom:12px">Despliegue no autorizado / dominio no oficial</div><p style="font-size:15px;line-height:1.55;margin:0 0 16px">Esta copia conserva marcas de procedencia de PROYECTA-IA y no se encuentra en un dominio autorizado.</p><p style="font-size:14px;line-height:1.5;margin:0 0 18px"><strong>© 2026 Luis Cabezas Tito. Todos los derechos reservados.</strong></p><a href="${officialUrl}" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#0b63ce;color:#fff;text-decoration:none;font-weight:800">Ir al sitio oficial</a></div>`;
+    Object.assign(panel.style,{position:'fixed',inset:'0',zIndex:'2147483647',display:'flex',alignItems:'center',justifyContent:'center',padding:'24px',background:'rgba(5,18,32,.94)',overflow:'auto'});
+    document.documentElement.style.overflow='hidden';
+    document.body.appendChild(panel);
+    // Rebloquea si otro código intenta mostrar el contenido después de esta validación.
+    const obs=new MutationObserver(() => { try { document.body.classList.add('access-locked'); } catch (_) {} });
+    obs.observe(document.body,{attributes:true,attributeFilter:['class']});
+  }
+
+  function initSecurity() {
+    addCopyright();
+    if (!isOfficial) blockUnofficial();
+    try { console.info('%cPROYECTA-IA','font-size:20px;font-weight:900;color:#0b63ce',`v${version} — © 2026 ${owner}. Todos los derechos reservados.`); } catch(_) {}
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',initSecurity,{once:true}); else initSecurity();
+})();

@@ -71,3 +71,12 @@ A partir de esta versión, la autorización **no se conserva entre módulos**.
 
 Reemplazar **solo `access.js`** en el repositorio `proyecta-ia-acceso`.
 Los demás archivos de este paquete son documentación y pueden reemplazarse opcionalmente.
+
+
+---
+
+## Autoría y derechos
+
+**PROYECTA-IA 1.0.1** — © 2026 **Luis Cabezas Tito**. Todos los derechos reservados.  
+Sitio oficial: https://luisctito-sketch.github.io/proyecta-ia/  
+Consulte `LICENSE`, `COPYRIGHT.md`, `TERMS_OF_USE.md` y `PROVENANCE.json`.

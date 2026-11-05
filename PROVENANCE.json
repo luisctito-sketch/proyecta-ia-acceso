@@ -1,0 +1,54 @@
+{
+  "schema": "proyecta-ia-provenance-1",
+  "product": "PROYECTA-IA",
+  "version": "1.0.1",
+  "release_date": "2026-11-05",
+  "copyright_owner": "Luis Cabezas Tito",
+  "contact": "luisctito@outlook.com",
+  "repository": "proyecta-ia-acceso",
+  "official_portal": "https://luisctito-sketch.github.io/proyecta-ia/",
+  "provenance_id": "PIA-LCT-2026-v1.0.1-proyecta-ia-acceso",
+  "critical_files": [
+    {
+      "path": "index.html",
+      "sha256": "fa42dbf05473daab2d8f1a7da426606b512bd312a628dbed5676690f641c2167",
+      "bytes": 2749
+    },
+    {
+      "path": "access.js",
+      "sha256": "77f3d1ef3ad3f9ac368bc7f959b241901fcaa158e0448e92000b0f7ced35caec",
+      "bytes": 15190
+    },
+    {
+      "path": "proyecta-security.js",
+      "sha256": "0792fbf578bef2d72f031a13b7b1dc6b42ada7bd1ce623dcad68b666fefaaf08",
+      "bytes": 3814
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3f4723c18077087b5bc377c87f003bf58612b22e4b023a99a6dd32208833ac9d",
+      "bytes": 1287
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "sha256": "55b955d85e1c2ec32fe157777d27b6162d0f1ef4ccdc897e202aedf3db213429",
+      "bytes": 781
+    },
+    {
+      "path": "TERMS_OF_USE.md",
+      "sha256": "4ec0a49a3369e28c22d696513eafea676ca75afd0bb429ee7ad2fe2ae927dc4c",
+      "bytes": 1089
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "06952c6f5a3fac8d05128f09f75e8a085c5fd1e1df8647b31f1fc7e5dd5afbf8",
+      "bytes": 1200
+    },
+    {
+      "path": "NOTICE.txt",
+      "sha256": "de234c594d39cc103928e38982a3e028068a46cda7187853d5a06ee074b99a27",
+      "bytes": 323
+    }
+  ],
+  "statement": "Manifest signed with the PROYECTA-IA Ed25519 owner key. Copyright notice is not an open-source license."
+}
